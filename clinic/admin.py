@@ -1,6 +1,41 @@
 from django.contrib import admin
-from .models import MenuItem, SubMenuItem
+from modeltranslation.admin import TranslationAdmin
+from .models import Department, News, NewsCategory, Info, Doc, DocCategory
+from .forms import DepartmentForm, NewsForm, NewsCategoryForm, InfoForm, DocForm, DocCategoryForm
 
 
-admin.site.register(MenuItem)
-admin.site.register(SubMenuItem)
+class DepartmentAdmin(TranslationAdmin):
+    form = DepartmentForm
+
+admin.site.register(Department, DepartmentAdmin)
+
+
+class NewsAdmin(TranslationAdmin):
+    form = NewsForm
+
+admin.site.register(News, NewsAdmin)
+
+
+class NewsCategoryAdmin(TranslationAdmin):
+    form = NewsCategoryForm
+    list_display = ('id', 'name')
+
+admin.site.register(NewsCategory, NewsCategoryAdmin)
+
+
+class InfoAdmin(TranslationAdmin):
+    form = InfoForm
+
+admin.site.register(Info, InfoAdmin)
+
+
+class DocCategoryAdmin(TranslationAdmin):
+    form = DocCategoryForm
+
+admin.site.register(DocCategory, DocCategoryAdmin)
+
+
+class DocAdmin(TranslationAdmin):
+    form = DocForm
+
+admin.site.register(Doc, DocAdmin)

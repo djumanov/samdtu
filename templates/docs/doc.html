@@ -1,0 +1,40 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block content %}
+    <!-- Breadcrumbs -->
+    <div class="breadcrumbs overlay">
+        <div class="container">
+            <div class="bread-inner">
+                <div class="row">
+                    <div class="col-12">
+                        <h2>{{ doc.category.name }}</h2>
+                        <ul class="bread-list">
+                            <li><a href="{% url "clinic:home" %}">Бош сахифа</a></li>
+                            <li><i class="icofont-simple-right"></i></li>
+                            <li class="active">{{ doc.title }}</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- End Breadcrumbs -->
+
+    <!-- Start Portfolio Details Area -->
+	<section class="pf-details section">
+		<div class="container">
+			<div class="row">
+				<div class="col-12">
+					<div class="inner-content">
+						<div class="body-text">
+							<h6>{{ doc.title }}</h6>
+							{{ doc.content|safe }}
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+	<!-- End Portfolio Details Area -->
+{% endblock %}

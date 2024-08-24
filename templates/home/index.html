@@ -1,0 +1,446 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block content %}
+	<!-- Slider Area -->
+	<section class="slider">
+		<div class="hero-slider">
+			<!-- Start Single Slider -->
+			<div class="single-slider" style="background-image:url('{% static "img/slider2.jpg" %}')">
+				<div class="container">
+					<div class="row">
+						<div class="col-lg-7">
+							<div class="text">
+								<h1>We Provide <span>Medical</span> Services That You Can <span>Trust!</span></h1>
+								<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris sed nisl
+									pellentesque, faucibus libero eu, gravida quam. </p>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<!-- End Single Slider -->
+			<!-- Start Single Slider -->
+			<div class="single-slider" style="background-image:url('{% static "img/slider.jpg" %}')">
+				<div class="container">
+					<div class="row">
+						<div class="col-lg-7">
+							<div class="text">
+								<h1>We Provide <span>Medical</span> Services That You Can <span>Trust!</span></h1>
+								<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris sed nisl
+									pellentesque, faucibus libero eu, gravida quam. </p>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<!-- Start End Slider -->
+			<!-- Start Single Slider -->
+			<div class="single-slider" style="background-image:url('{% static "img/slider3.jpg" %}')">
+				<div class="container">
+					<div class="row">
+						<div class="col-lg-7">
+							<div class="text">
+								<h1>We Provide <span>Medical</span> Services That You Can <span>Trust!</span></h1>
+								<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris sed nisl
+									pellentesque, faucibus libero eu, gravida quam. </p>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<!-- End Single Slider -->
+		</div>
+	</section>
+	<!--/ End Slider Area -->
+
+	<!-- Start Schedule Area -->
+	
+	<!--/End Start schedule Area -->
+
+
+	<section class="yangiliklar news-single  ">
+		<div class="container">
+			<div class="row" >
+				<div class="col-lg-4 col-md-5 col-12 wow animate__fadeInUp">
+					<div id="carouselExampleDark" class="carousel carousel-dark slide">
+						<div class="carousel-indicators">
+							<button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="0"
+								class="active" aria-current="true" aria-label="Slide 1"></button>
+							<button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="1"
+								aria-label="Slide 2"></button>
+							<button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="2"
+								aria-label="Slide 3"></button>
+						</div>
+						<div class="carousel-inner">
+							<div class="carousel-item active">
+								<div class="img-areyl">
+									<img src="https://media.istockphoto.com/id/177373093/photo/indian-male-doctor.jpg?s=612x612&w=0&k=20&c=5FkfKdCYERkAg65cQtdqeO_D0JMv6vrEdPw3mX1Lkfg=" alt="">
+									<div class="carousel-icons">
+										<div class="carousel-icons-left">
+											<span class="date"><i class="fa fa-calendar" aria-hidden="true"></i>
+												{{ latest_news.0.created }}</span>
+										</div>
+										<div class="carousel-icons-right">
+											<span class="views"><i class="fa fa-eye"></i>{{ latest_news.0.viewers }} Views</span>
+										</div>
+									</div>
+									<h4>{{ latest_news.0.description }}</h4>
+								</div>
+							</div>
+							{% for item in latest_news %}
+								{% if item.id != latest_news.0.id %}
+									<div class="carousel-item">
+										<div class="img-areyl">
+											<img src="{{ item.image.url }}" alt="">
+											<div class="carousel-icons">
+												<div class="carousel-icons-left">
+													<span class="date"><i class="fa fa-calendar" aria-hidden="true"></i>
+														{{ item.created }}</span>
+												</div>
+												<div class="carousel-icons-right">
+													<span class="views"><i class="fa fa-eye"></i>{{ item.viewers }} Views</span>
+												</div>
+											</div>
+											<h4>{{ item.description }}</h4>
+										</div>
+									</div>
+								{% endif %}
+							{% endfor %}
+						</div>
+						
+						<button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleDark"
+							data-bs-slide="prev">
+							<span class="carousel-control-prev-icon" aria-hidden="true"></span>
+							<span class="visually-hidden">Previous</span>
+						</button>
+						<button class="carousel-control-next" type="button" data-bs-target="#carouselExampleDark"
+							data-bs-slide="next">
+							<span class="carousel-control-next-icon" aria-hidden="true"></span>
+							<span class="visually-hidden">Next</span>
+						</button>
+					</div>
+				</div>
+				<div class="col-lg-8 col-md-7 col-12 wow animate__fadeInUp">
+					<div class="row">
+						<div class="col-lg-12 col-md-12 col-12">
+							<!-- Start Single Service -->
+							<div class="single-service-top">
+								<h2>Янгиликлар <img src="{% static "img/section-img.png" %}" alt="#"></h2>
+								<span><a href="{% url "clinic:news" %}"
+										style="text-decoration: none; color: #1A76D1;">Барча янгиликлар</a></span>
+							</div>
+							<!-- End Single Service -->
+						</div>
+						<div class="col-lg-6 col-md-6 col-12">
+							<hr>
+							{% for item in latest_news %}
+							<!-- Start Single Service -->
+							<div class="single-service">
+								<div class="row">
+									
+										<div class="meta  meta-yangilik">
+											<h6><a href="{% url "clinic:news_detail" item.id %}">{{ item.title }}</a></h6>
+											<div class="meta-left">
+												<span class="date"><i class="fa fa-calendar" aria-hidden="true"></i>
+													{{ item.created }}</span>
+											</div>
+											<div class="meta-right">
+												<span class="views"><i class="fa fa-eye"></i>{{ item.viewers }} Кўришлар</span>
+											</div>
+										</div>
+									
+								</div>
+							</div>
+							<hr>
+							<!-- End Single Service -->
+							{% endfor %}
+						</div>
+						
+						<!-- End Single Service -->
+					</div>
+				</div>
+			</div>
+		</div>
+		</div>
+	</section>
+
+	<!-- Start Fun-facts -->
+	<div id="fun-facts" class="fun-facts section overlay">
+		<div class="container">
+			<div class="row">
+				<div class="col-lg-3 col-md-6 col-12 wow animate__fadeInUp">
+					<!-- Start Single Fun -->
+					<div class="single-fun">
+						<i class="fa fa-users"></i>
+						<div class="content">
+							<span class="counter">3468</span>
+							<p>Даволанган беморлар сони</p>
+						</div>
+					</div>
+					<!-- End Single Fun -->
+				</div>
+				<div class="col-lg-3 col-md-6 col-12 wow animate__fadeInUp">
+					<!-- Start Single Fun -->
+					<div class="single-fun">
+						<i class="icofont icofont-user-alt-3"></i>
+						<div class="content">
+							<span class="counter">557</span>
+							<p>Амалга оширилган операциялар сони</p>
+						</div>
+					</div>
+					<!-- End Single Fun -->
+				</div>
+				<div class="col-lg-3 col-md-6 col-12 wow animate__fadeInUp">
+					<!-- Start Single Fun -->
+					<div class="single-fun">
+						<i class="icofont-simple-smile"></i>
+						<div class="content">
+							<span class="counter">4379</span>
+							<p>Туғилишлар сони</p>
+						</div>
+					</div>
+					<!-- End Single Fun -->
+				</div>
+				<div class="col-lg-3 col-md-6 col-12 wow animate__fadeInUp">
+					<!-- Start Single Fun -->
+					<div class="single-fun">
+						<i class="icofont icofont-table"></i>
+						<div class="content">
+							<span class="counter">32</span>
+							<p>Амбулатория ташрифлари</p>
+						</div>
+					</div>
+					<!-- End Single Fun -->
+				</div>
+			</div>
+		</div>
+	</div>
+	<!--/ End Fun-facts -->
+
+    <section class="foto-vedio">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12 wow animate__fadeInUp">
+                    <div class="section-title">
+                        <h2>Кленика томонидан қилиб бориладиган ишлар</h2>
+                        <img src="{% static "img/section-img.png" %}" alt="#">
+                    </div>
+                </div>
+            </div>
+            <ul class="nav nav-pills nav-justified" id="pills-tab" role="tablist">
+                <li class="nav-item" role="presentation">
+                    <button class="btn btn-outline-primary nav-link " id="pills-home-tab" data-bs-toggle="pill" data-bs-target="#pills-home"
+                        type="button" role="tab" aria-controls="pills-home" aria-selected="true">Фото янгиликлар</button>
+                </li>
+                <li class="nav-item" role="presentation">
+                    <button class="btn btn-outline-primary  nav-link" id="pills-profile-tab" data-bs-toggle="pill" data-bs-target="#pills-profile"
+                        type="button" role="tab" aria-controls="pills-profile" aria-selected="false">Ведио</button>
+                </li>
+                <li class="nav-item" role="presentation">
+                    <button class="btn btn-outline-primary nav-link" id="pills-contact-tab" data-bs-toggle="pill" data-bs-target="#pills-contact"
+                        type="button" role="tab" aria-controls="pills-contact" aria-selected="false">Умумий ведио қулланмалар</button>
+                </li>
+            </ul>
+            <div class="tab-content" id="pills-tabContent">
+                <div class="tab-pane fade show active" id="pills-home" role="tabpanel" aria-labelledby="pills-home-tab"
+                    tabindex="0">
+                    <!-- Start Blog Area -->
+                    <section class="blog section wow animate__fadeInUp" id="blog">
+                        <div class="container">
+                            <div class="row ">
+                                <div class="col-lg-4 col-md-6 col-12">
+                                    <div class="single-news">
+                                        <div class="news-head">
+                                            <img src="{% static "img/blog2.jpg" %}" alt="#">
+                                        </div>
+                                        <div class="news-body">
+                                            <div class="news-content">
+                                                <div class="date">22 Aug, 2020</div>
+                                                <h2><a href="fotolavha.html">We have annnocuced our new product.</a></h2>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-lg-4 col-md-6 col-12">
+                                    <div class="single-news">
+                                        <div class="news-head">
+                                            <img src="{% static "img/blog3.jpg" %}" alt="#">
+                                        </div>
+                                        <div class="news-body">
+                                            <div class="news-content">
+                                                <div class="date">22 Aug, 2020</div>
+                                                <h2><a href="fotolavha.html">We have annnocuced our new product.</a></h2>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-lg-4 col-md-6 col-12">
+                                    <div class="single-news">
+                                        <div class="news-head">
+                                            <img src="{% static "img/blog1.jpg" %}" alt="#">
+                                        </div>
+                                        <div class="news-body">
+                                            <div class="news-content">
+                                                <div class="date">22 Aug, 2020</div>
+                                                <h2><a href="blog-single.html">We have annnocuced our new product.</a></h2>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-lg-4 col-md-6 col-12">
+                                    <div class="single-news">
+                                        <div class="news-head">
+                                            <img src="{% static "img/blog1.jpg" %}" alt="#">
+                                        </div>
+                                        <div class="news-body">
+                                            <div class="news-content">
+                                                <div class="date">22 Aug, 2020</div>
+                                                <h2><a href="blog-single.html">We have annnocuced our new product.</a></h2>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+                    <!-- End Blog Area -->
+                </div>
+                <div class="tab-pane fade" id="pills-profile" role="tabpanel" aria-labelledby="pills-profile-tab"
+                    tabindex="0">
+                    <!-- Start Why choose -->
+                    <section class="why-choose section">
+                        <div class="container">
+                            <div class="row">
+                                <div class="col-lg-6 col-12">
+                                    <!-- Start Choose Left -->
+                                    <div class="choose-left">
+                                        <h3>Who We Are</h3>
+                                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas pharetra antege
+                                            vel est
+                                            lobortis, a commodo magna rhoncus. In quis nisi non emet quam pharetra commodo.
+                                        </p>
+                                        <p>Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos
+                                            himenaeos.
+                                        </p>
+                                        <div class="row">
+                                            <div class="col-lg-6">
+                                                <ul class="list">
+                                                    <li><i class="fa fa-caret-right"></i>Maecenas vitae luctus nibh. </li>
+                                                    <li><i class="fa fa-caret-right"></i>Duis massa massa.</li>
+                                                    <li><i class="fa fa-caret-right"></i>Aliquam feugiat interdum.</li>
+                                                </ul>
+                                            </div>
+                                            <div class="col-lg-6">
+                                                <ul class="list">
+                                                    <li><i class="fa fa-caret-right"></i>Maecenas vitae luctus nibh. </li>
+                                                    <li><i class="fa fa-caret-right"></i>Duis massa massa.</li>
+                                                    <li><i class="fa fa-caret-right"></i>Aliquam feugiat interdum.</li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <!-- End Choose Left -->
+                                </div>
+                                <div class="col-lg-6 col-12">
+                                    <!-- Start Choose Rights -->
+                                    <img src="{% static "img/blog-sidebar1.jpg" %}" alt="">
+                                    <div class="choose-right">
+                                        <div class="video-image">
+                                            <!-- Video Animation -->
+                                            <div class="promo-video">
+                                                <div class="waves-block">
+                                                    <div class="waves wave-1"></div>
+                                                    <div class="waves wave-2"></div>
+                                                    <div class="waves wave-3"></div>
+                                                </div>
+                                            </div>
+                                            <!--/ End Video Animation -->
+                                            <a href="https://www.youtube.com/watch?v=RFVXy6CRVR4"
+                                                class="video video-popup mfp-iframe"><i class="fa fa-play"></i></a>
+                                        </div>
+                                    </div>
+                                    <!-- End Choose Rights -->
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+                    <!--/ End Why choose -->
+                </div>
+                <div class="tab-pane fade" id="pills-contact" role="tabpanel" aria-labelledby="pills-contact-tab"
+                    tabindex="0">
+                    <section class="blog section" id="blog">
+                        <div class="container">
+                            <div class="row ">
+                                <div class="col-lg-4 col-md-6 col-12">
+                                    <div class="single-news">
+                                        <div class="tem1 why-choose">
+                                            <img src="{% static "img/blog-sidebar3.jpg" %}" alt="">
+                                            <div class="choose-right">
+                                                <div class="video-image">
+                                                    <!-- Video Animation -->
+                                                    <div class="promo-video">
+                                                        <div class="waves-block">
+                                                            <div class="waves wave-1"></div>
+                                                            <div class="waves wave-2"></div>
+                                                            <div class="waves wave-3"></div>
+                                                        </div>
+                                                    </div>
+                                                    <!--/ End Video Animation -->
+                                                    <a href="https://www.youtube.com/watch?v=RFVXy6CRVR4"
+                                                        class="video video-popup mfp-iframe"><i class="fa fa-play"></i></a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="news-body">
+                                            <div class="news-content">
+                                                <div class="date">22 Aug, 2020</div>
+                                                <h2><a href="blog-single.html">We have annnocuced our new product.</a></h2>
+                                                <p class="text">Lorem ipsum dolor a sit ameti, consectetur adipisicing elit,
+                                                    sed do
+                                                    eiusmod tempor incididunt sed do incididunt sed.</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    
+                                </div>
+                                <div class="col-lg-4 col-md-6 col-12">
+                                    <div class="single-news">
+                                        <div class="tem1 why-choose">
+                                            <img src="{% static "img/blog-sidebar2.jpg" %}" alt="">
+                                            <div class="choose-right">
+                                                <div class="video-image">
+                                                    <!-- Video Animation -->
+                                                    <div class="promo-video">
+                                                        <div class="waves-block">
+                                                            <div class="waves wave-1"></div>
+                                                            <div class="waves wave-2"></div>
+                                                            <div class="waves wave-3"></div>
+                                                        </div>
+                                                    </div>
+                                                    <!--/ End Video Animation -->
+                                                    <a href="https://www.youtube.com/watch?v=RFVXy6CRVR4"
+                                                        class="video video-popup mfp-iframe"><i class="fa fa-play"></i></a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="news-body">
+                                            <div class="news-content">
+                                                <div class="date">22 Aug, 2020</div>
+                                                <h2><a href="blog-single.html">We have annnocuced our new product.</a></h2>
+                                                <p class="text">Lorem ipsum dolor a sit ameti, consectetur adipisicing elit,
+                                                    sed do
+                                                    eiusmod tempor incididunt sed do incididunt sed.</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+                </div>
+            </div>
+        </div>
+    </section>
+{% endblock content %}

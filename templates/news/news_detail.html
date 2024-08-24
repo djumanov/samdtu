@@ -1,0 +1,92 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block content %}
+	<!-- Breadcrumbs -->
+	<div class="breadcrumbs overlay">
+		<div class="container">
+			<div class="bread-inner">
+				<div class="row">
+					<div class="col-12">
+						<h2>Янгиликлар</h2>
+						<ul class="bread-list">
+							<li><a href="{% url "clinic:home" %}">Бош сахифа</a></li>
+							<li><i class="icofont-simple-right"></i></li>
+							<li><a href="{% url "clinic:news_detail" news_item.id %}">Янгиликлар</a></li>
+						</ul>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<!-- End Breadcrumbs -->
+
+	<!-- Single News -->
+	<section class="news-single section">
+		<div class="container">
+			<div class="row">
+				<div class="col-lg-8 col-12">
+					<div class="row">
+						<div class="col-12">
+							<div class="single-main">
+								<!-- News Head -->
+								<div class="news-head">
+									<img src="{{ news_item.image.url }}" alt="#">
+								</div>
+								<!-- News Title -->
+								<h1 class="news-title">{{ news_item.title }}</h1>
+								<!-- Meta -->
+								<div class="meta">
+									<div class="meta-left">
+										<span class="date"><i class="fa fa-calendar"></i>{{ news_item.created }}</span>
+									</div>
+									<div class="meta-right">
+										<span class="views"><i class="fa fa-eye"></i>{{ news_item.viewers }} Кўришлар</span>
+									</div>
+								</div>
+								<!-- News Text -->
+								<div class="news-text">
+									{{ news_item.content|safe }}
+								</div>
+								<div class="blog-bottom">
+									<!-- Social Share -->
+									<ul class="social-share">
+										<li class="linkedin"><a href="https://t.me/klinika_samdtu"><i class="fa fa-telegram"></i></a></li>
+										<li class="pinterest"><a href="#"><i class="fa fa-instagram"></i></a></li>
+										<li class="linkedin"><a href="#"><i class="fa fa-facebook"></i></a></li>
+									</ul>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="col-lg-4 col-12">
+					<div class="main-sidebar">
+						<div class="single-widget recent-post">
+							<h3 class="title">Яқинда эълон қилинган хабар</h3>
+							<!-- Single Post -->
+							 {% for item in latest_news %}
+								<div class="single-post">
+									<div class="image">
+										<img src="{{ item.image.url }}" alt="#">
+									</div>
+									<div class="content">
+										<h5><a href="{% url "clinic:news_detail" item.id %}">{{ item.title }}</a></h5>
+										<ul class="comment">
+											<li><i class="fa fa-calendar" aria-hidden="true"></i>{{ item.created }}</li>
+										</ul>
+									</div>
+								</div>
+							{% endfor %}
+							<!-- End Single Post -->
+						</div>
+						<!--/ End Single Widget -->
+
+						<!--/ End Single Widget -->
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+	<!--/ End Single News -->
+{% endblock %}

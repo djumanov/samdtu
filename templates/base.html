@@ -1,0 +1,395 @@
+{% load static %}
+{% load i18n %}
+
+<!doctype html>
+<html class="no-js" lang="zxx">
+
+<head>
+	<!-- Meta Tags -->
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="keywords" content="Site keywords here">
+	<meta name="description" content="">
+	<meta name='copyright' content=''>
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+	<!-- Title -->
+	<title>Sam klinika</title>
+
+	<!-- Favicon -->
+	<link rel="icon" href="{% static "img/favicon.png" %}">
+
+	<!-- Google Fonts -->
+	<link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
+  />
+	<link
+		href="https://fonts.googleapis.com/css?family=Poppins:200i,300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i&display=swap"
+		rel="stylesheet">
+
+	<!-- Bootstrap CSS -->
+	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+		integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+	<link rel="stylesheet" href="{% static "css/bootstrap.min.css" %}">
+	<!-- Nice Select CSS -->
+	<link rel="stylesheet" href="{% static "css/nice-select.css" %}">
+	<!-- Font Awesome CSS -->
+	<link rel="stylesheet" href="{% static "css/font-awesome.min.css" %}">
+	<!-- icofont CSS -->
+	<link rel="stylesheet" href="{% static "css/icofont.css" %}">
+	<!-- Slicknav -->
+	<link rel="stylesheet" href="{% static "css/slicknav.min.css" %}">
+	<!-- Owl Carousel CSS -->
+	<link rel="stylesheet" href="{% static "css/owl-carousel.css" %}">
+	<!-- Datepicker CSS -->
+	<link rel="stylesheet" href="{% static "css/datepicker.css" %}">
+	<!-- Animate CSS -->
+	<link rel="stylesheet" href="{% static "css/animate.min.css" %}">
+	<link rel="stylesheet" href="{% static "css/animate.css" %}">
+	<!-- Magnific Popup CSS -->
+	<link rel="stylesheet" href="{% static "css/magnific-popup.css" %}">
+	<link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+
+	<!-- Medipro CSS -->
+	<link rel="stylesheet" href="{% static "css/normalize.css" %}">
+	<link rel="stylesheet" href="{% static "style.css" %}">
+	<link rel="stylesheet" href="{% static "css/responsive.css" %}">
+
+</head>
+
+<body>
+
+	<!-- Preloader -->
+	<div class="preloader">
+		<div class="loader">
+			<div class="loader-outter"></div>
+			<div class="loader-inner"></div>
+
+			<div class="indicator">
+				<svg width="16px" height="12px">
+					<polyline id="back" points="1 6 4 6 6 11 10 1 12 6 15 6"></polyline>
+					<polyline id="front" points="1 6 4 6 6 11 10 1 12 6 15 6"></polyline>
+				</svg>
+			</div>
+		</div>
+	</div>
+	<!-- End Preloader -->
+
+
+	<!-- Header Area -->
+	<header class="header">
+		<!-- Topbar -->
+		<div class="topbar">
+			<div class="container">
+				<div class="row">
+					<div class="col-lg-8 col-md-7 col-12">
+						<!-- Top Contact -->
+						<ul class="top-contact">
+							<li><i class="fa fa-phone"></i>+99866 238-67-26</li>
+							<li><i class="fa fa-instagram"></i><a
+									href="https://www.instagram.com/klinika_sammu?utm_source=qr">Instagram</a></li>
+							<li><i class="fa fa-telegram"></i><a
+									href="https://t.me/klinika_samdtu">Telegram</a></li>
+							<li><i class="fa fa-facebook"></i><a
+									href="https://www.facebook.com/groups/2199485880432921/">Facebook</a></li>
+						</ul>
+						
+						<!-- End Top Contact -->
+					</div>
+					<div class="col-md-4">
+						{% comment %} <form action="{% url 'clinic:set_language' %}" method="get">
+							{% get_current_language as LANGUAGE_CODE %}
+							{{ LANGUAGE_CODE }}
+							<select id="autoSizingSelect" name="lang" onchange="this.form.submit()">
+								<option value="uz" {% if request.LANGUAGE_CODE == 'uz' %}selected{% endif %}>Uz</option>
+								<option value="ru" {% if request.LANGUAGE_CODE == 'ru' %}selected{% endif %}>Ru</option>
+								<option value="en" {% if request.LANGUAGE_CODE == 'en' %}selected{% endif %}>En</option>
+							</select>
+						</form> {% endcomment %}
+						<form action="{% url 'set_language' %}" method="post">
+							{% csrf_token %}
+							<input name="next" type="hidden" value="{{ request.path }}" />
+							
+							<select id="autoSizingSelect" name="language" onchange="this.form.submit()">
+								{% get_current_language as LANGUAGE_CODE %}
+								{% get_available_languages as LANGUAGES %}
+								{% get_language_info_list for LANGUAGES as languages %}
+								{% for language in languages %}
+									<option value="{{ language.code }}" {% if language.code == LANGUAGE_CODE %}selected{% endif %}>
+										{{ language.name_local }}
+									</option>
+								{% endfor %}
+							</select>
+						</form>
+					
+					  </div>
+				</div>
+			</div>
+		</div>
+		<!-- End Topbar -->
+		<!-- Header Inner -->
+		<div class="header-inner">
+			<div class="container">
+				<div class="inner">
+					<div class="row">
+						<div class="col-lg-1 col-md-3 col-12">
+							<!-- Start Logo -->
+							<div class="logo">
+								<a href="{% url "clinic:home" %}"><img src="{% static "img/samdtu-logo.png" %}" alt="#"></a>
+							</div>
+							<!-- End Logo -->
+							<!-- Mobile Nav -->
+							<div class="mobile-nav"></div>
+							<!-- End Mobile Nav -->
+						</div>
+						<div class="col-lg-11 col-md-9 col-12">
+							<!-- Main Menu -->
+							<div class="main-menu">
+								<nav class="navigation">
+									<ul class="nav menu">
+										<li class="active"><a href="{% url "clinic:home" %}">Бош сахифа</a></li>
+										<li><a href="{% url "clinic:news" %}">Янгиликлар </a>
+										</li>
+										<li><a href="#">Клиника </a><i class="icofont-rounded-down"></i></a>
+											<ul class="dropdown">
+												{% for info in info_items %}
+													<li><a href="{% url "clinic:info" info.id %}">{{ info.title }}</a></li>
+												{% endfor %}
+											</ul>
+										</li>
+										<li><a href="#">Булимлар </a><i class="icofont-rounded-down"></i></a>
+											<ul class="dropdown">
+												{% for department in departments %}
+												<li><a href="{% url "clinic:department" department.id %}">{{ department.title }}</a></li>
+												{% endfor %}
+											</ul>
+										</li>
+										
+										<li><a href="#">Хужжатлар </a><i class="icofont-rounded-down"></i></a>
+											<ul class="dropdown">
+												{% for doc in doc_categories %}
+													<li><a href="{% url "clinic:doc" doc.id %}">{{ doc.name }}</a></li>
+												{% endfor %}
+											</ul>
+										</li>
+										<li><a href="Tendirlar.html">Тендерлар</a></li>
+										<!-- <li><a href="contact.html">Contact Us</a></li> -->
+									</ul>
+								</nav>
+							</div>
+							<!--/ End Main Menu -->
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<!--/ End Header Inner -->
+	</header>
+	<!-- End Header Area -->
+
+
+    {% block content %}{% endblock content %}
+
+
+	<!-- Start clients -->
+	<div class="clients overlay wow animate__fadeInUp">
+		<div class="container">
+			<div class="row">
+				<div class="col-lg-12 col-md-12 col-12">
+					<div class="owl-carousel clients-slider">
+						<div class="single-clients">
+							<a href="https://minzdrav.uz/">
+								<img src="{% static "img/Sog'liqni saqlash.png" %}" alt="#">
+							</a>
+						</div>
+						<div class="single-clients">
+							<a href="http://www.press-service.uz/">
+								<img src="{% static "img/Matbuot.png" %}" alt="#">
+							</a>
+						</div>
+						<div class="single-clients">
+							<a href="https://samarkand.uz/">
+								<img src="{% static "img/Hokimlik.png" %}" alt="#">
+							</a>
+						</div>
+						<div class="single-clients">
+							<a href="http://www.mfer.uz/">
+								<img src="{% static "img/Tashqi aloqa.png" %}" alt="#">
+							</a>
+						</div>
+						<div class="single-clients">
+							<a href="http://my.gov.uz/">
+								<img src="{% static "img/Maygov.png" %}" alt="#">
+							</a>
+						</div>
+						<div class="single-clients">
+							<a href="">
+								<img src="{% static "img/iqtisod.png" %}" alt="#">
+							</a>
+						</div>
+						<div class="single-clients">
+							<a href="https://www.imv.uz/">
+								<img src="{% static "img/Moliya.png" %}" alt="#">
+							</a>
+						</div>
+						<div class="single-clients">
+							<a href="https://adliya.uz/">
+								<img src="{% static "img/Adliya.png" %}" alt="#">
+							</a>
+						</div>
+						<div class="single-clients">
+							<a href="https://gov.uz/">
+								<img src="{% static "img/Hukumat.png" %}" alt="#">
+							</a>
+						</div>
+						<div class="single-clients">
+							<a href="http://www.energonazorat.uz/">
+								<img src="{% static "img/Uzb.png" %}" alt="#">
+							</a>
+						</div>
+						<div class="single-clients">
+							<a href="http://www.mvd.uz/">
+								<img src="{% static "img/Ichki ishlar.png" %}" alt="#">
+							</a>
+						</div>
+						<div class="single-clients">
+							<a href="https://www.mfa.uz/ru/">
+								<img src="{% static "img/Tashqi ishlar.png" %}" alt="#">
+							</a>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<!--/Ens clients -->
+
+	<!-- Footer Area -->
+	<footer id="footer" class="footer ">
+		<!-- Footer Top -->
+		<div class="footer-top">
+			<div class="container">
+				<div class="row">
+					<div class="col-lg-3 col-md-6 col-12 wow animate__fadeInUp">
+						<div class="single-footer">
+							<div class="single-footer-img">
+								<a href="#"><img src="{% static "img/samdtu-logo.png" %}" /></a>
+							</div>
+							<p>Ўзбекистон Республикаси Соғлиқни сақлаш вазирлиги Самарканд давлат тиббиёт инверситетининг
+								1-клиникаси.</p>
+							<!-- Social -->
+							<ul class="social">
+								<li><a href="https://t.me/klinika_samdtu"><i class="fa fa-telegram" aria-hidden="true"></i></a></li>
+								<li><a href="https://www.instagram.com/klinika_sammu?utm_source=qr"><i class="fa fa-instagram" aria-hidden="true"></i></a></li>
+								<li><a href="https://www.facebook.com/groups/2199485880432921/"><i class="fa fa-facebook" aria-hidden="true"></i>
+									</a></li>
+							</ul>
+							<!-- End Social -->
+						</div>
+					</div>
+					<div class="col-lg-4 col-md-6 col-12 wow animate__fadeInUp">
+						<div class="single-footer f-link">
+							<h2>Манзилимиз</h2>
+							<div class="row">
+								<div class="col-lg-12 col-md-12 col-12">
+									<ul>
+										<li><i class="fa fa-globe" aria-hidden="true"></i>Самарқанд давлат тиббиёт университети</li>
+										<li><i class="fa fa-map-marker" aria-hidden="true"></i> Бизнинг манзил 703000. Узбекистан Республика, Самарканд шахри, Анкабой кучаси </li>
+										<li><i class="fa fa-phone" aria-hidden="true"></i> Бизнинг телефонлар <br /> +99866 238-67-26</li>
+										<li><i class="fa fa-envelope" aria-hidden="true"></i> klinikasammi@mail.ru</li>
+									</ul>
+								</div>
+							</div>
+						</div>
+					</div>
+					
+					<div class="col-lg-5 col-md-6 col-12">
+						<div class="single-footer">
+							<h2>Биз жойлашган манзил</h2>
+							<iframe style="width: 100%; height: 90%;"
+								src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d12284.54030078054!2d66.965559!3d39.669176!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3f4d18e8e16b371b%3A0x5b47421b540b7ac4!2z0JrQu9C40L3QuNC60LAg0KHQsNC80JzQmA!5e0!3m2!1sru!2sus!4v1719237623097!5m2!1sru!2sus"
+								allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<!--/ End Footer Top -->
+		<!-- Copyright -->
+		<div class="copyright">
+			<div class="container">
+				<div class="row">
+					<div class="col-lg-12 col-md-12 col-12">
+						<div class="copyright-content">
+							<p>© Copyright 2024 | All Rights Reserved by </p>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<!--/ End Copyright -->
+	</footer>
+	<!--/ End Footer Area -->
+
+	<!-- jquery Min JS -->
+	<script src="{% static "js/jquery.min.js" %}"></script>
+	<!-- jquery Migrate JS -->
+	<script src="{% static "js/jquery-migrate-3.0.0.js" %}"></script>
+	<!-- jquery Ui JS -->
+	<script src="{% static "js/jquery-ui.min.js" %}"></script>
+	<!-- Easing JS -->
+	<script src="{% static "js/easing.js" %}"></script>
+	<!-- Color JS -->
+	<script src="{% static "js/colors.js" %}"></script>
+	<!-- Popper JS -->
+	<script src="{% static "js/popper.min.js" %}"></script>
+	<!-- Bootstrap Datepicker JS -->
+	<script src="{% static "js/bootstrap-datepicker.js" %}"></script>
+	<!-- Jquery Nav JS -->
+	<script src="{% static "js/jquery.nav.js" %}"></script>
+	<!-- Slicknav JS -->
+	<script src="{% static "js/slicknav.min.js" %}"></script>
+	<!-- ScrollUp JS -->
+	<script src="{% static "js/jquery.scrollUp.min.js" %}"></script>
+	<!-- Niceselect JS -->
+	<script src="{% static "js/niceselect.js" %}"></script>
+	<!-- Tilt Jquery JS -->
+	<script src="{% static "js/tilt.jquery.min.js" %}"></script>
+	<!-- Owl Carousel JS -->
+	<script src="{% static "js/owl-carousel.js" %}"></script>
+	<!-- counterup JS -->
+	<script src="{% static "js/jquery.counterup.min.js" %}"></script>
+	<!-- Steller JS -->
+	<script src="{% static "js/steller.js" %}"></script>
+	<!-- Wow JS -->
+	<script src="{% static "js/wow.min.js" %}"></script>
+	<!-- Magnific Popup JS -->
+	<script src="{% static "js/jquery.magnific-popup.min.js" %}"></script>
+	<!-- Counter Up CDN JS -->
+	<script src="http://cdnjs.cloudflare.com/ajax/libs/waypoints/2.0.3/waypoints.min.js"></script>
+	<!-- Bootstrap JS -->
+	<script src="{% static "js/bootstrap.min.js" %}"></script>
+	<!-- Main JS -->
+	<script src="{% static "js/main.js" %}"></script>
+
+	<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"
+		integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r"
+		crossorigin="anonymous"></script>
+	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.min.js"
+		integrity="sha384-0pUGZvbkm6XF6gxjEnlmuGrJXVbNuzT9qBBavbLwCsOGabYfZo0T0to5eqruptLy"
+		crossorigin="anonymous"></script>
+	<script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+	<script>
+		AOS.init();
+	</script>
+
+	<script>
+		function reload_page() {
+			window.location.reload(true);
+		}
+	</script>		
+
+</body>
+
+</html>

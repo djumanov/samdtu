@@ -1,0 +1,42 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block content %}
+    <!-- Breadcrumbs -->
+    <div class="breadcrumbs overlay">
+        <div class="container">
+            <div class="bread-inner">
+                <div class="row">
+                    <div class="col-12">
+                        <h2>{{ category.name }}</h2>
+                        <ul class="bread-list">
+                            <li><a href="{% url "clinic:home" %}">Бош сахифа</a></li>
+                            <li><i class="icofont-simple-right"></i></li>
+                            <li class="active">{{ category.name }}</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- End Breadcrumbs -->
+
+    <!-- Start Portfolio Details Area -->
+	<section class="pf-details section">
+		<div class="container">
+			<div class="row">
+				<div class="col-12">
+					<h2>Документлар Рўйхати</h2>
+					{% for document in docs %}
+						<div class="row">
+							<div class="col-lg-10 col-md-8 col-md-12 yangilik-content-title">
+								<h6>{{ forloop.counter }}. <a href="{% url "clinic:doc_detail" document.id %}" >{{ document.title }}</a></h6>
+							</div>
+						</div>
+					{% endfor %}
+				</div>
+			</div>
+		</div>
+	</section>
+	<!-- End Portfolio Details Area -->
+{% endblock %}
