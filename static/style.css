@@ -4551,3 +4551,15 @@ select[name="language"] {
     max-height: 300px; /* Bu yerdagi qiymatni o'zingizga mos ravishda o'zgartirishingiz mumkin */
     overflow-y: auto;
 }
+
+.single-news .news-head img {
+    width: 100%;
+    height: 200px; /* Barcha rasmlar uchun bir xil balandlik */
+    object-fit: cover; /* Rasmlarni containerga sig'dirish uchun */
+}
+
+.news-content h2 {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
