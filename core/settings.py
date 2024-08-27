@@ -127,12 +127,8 @@ LANGUAGES = (
     ('en', _('English')),
 )
 
-LANGUAGE_SESSION_KEY = 'django_language'
-
 MODELTRANSLATION_DEFAULT_LANGUAGE = 'ru'
 DEFAULT_LANGUAGE = 'ru'
-
-LANGUAGE_COOKIE_NAME = 'django_language'
 
 
 USE_TZ = True
