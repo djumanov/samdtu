@@ -8,11 +8,11 @@
             <div class="bread-inner">
                 <div class="row">
                     <div class="col-12">
-                        <h2>Янгиликлар</h2>
+                        <h2>Yangiliklar</h2>
                         <ul class="bread-list">
-                            <li><a href="../index.html">Бош сахифа</a></li>
+                            <li><a href="../index.html">Bosh sahifa</a></li>
                             <li><i class="icofont-simple-right"></i></li>
-                            <li class="active">Янгиликлар</li>
+                            <li class="active">Yangiliklar</li>
                         </ul>
                     </div>
                 </div>
@@ -25,7 +25,7 @@
         <div class="container">
             <div class="row">
                 <div class="col-lg-9 col-md-8 col-md-12 main-sidebar-link1">
-                    <h2>Сунги янгиликлар</h2>
+                    <h2>So'ngi yangiliklar</h2>
                     <div class="d-flex align-items-start ">
                         <div class="tab-content" id="v-pills-tabContent">
                             <div class="tab-pane fade show active" id="v-pills-home" role="tabpanel"
@@ -43,7 +43,7 @@
                                                                 {{ item.created }}</span>
                                                         </div>
                                                         <div class="m-right">
-                                                            <span class="views"><i class="fa fa-eye"></i>{{ item.viewers }} Кўришлар</span>
+                                                            <span class="views"><i class="fa fa-eye"></i>Ko'rishlar soni {{ item.viewers }}</span>
                                                         </div>
                                                     </div>
                                                 </div>
@@ -56,7 +56,7 @@
                                 {% else %}
                                     <div class="row">
                                         <div class="col-lg-10 col-md-8 col-md-12 yangilik-content-title">
-                                            <h3><a href="#" >Ynagiliklar mavjud emas</a></h3>
+                                            <h3><a href="#" >Yangiliklar mavjud emas</a></h3>
                                         </div>
                                     </div>
                                 {% endif %}
@@ -92,7 +92,7 @@
                 </div>
                 
                 <div class="col-lg-3 col-md-4 col-md-12 main-sidebar-link">
-                    <h2>Бўлимлар</h2>
+                    <h2>Mavzular</h2>
                     <div id="v-pills-tab" role="tablist" aria-orientation="vertical ">
                         {% for category in news_categories %}
                             <div class=" nav-link active" id="v-pills-home-tab" data-bs-toggle="pill"

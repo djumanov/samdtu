@@ -8,11 +8,11 @@
 			<div class="bread-inner">
 				<div class="row">
 					<div class="col-12">
-						<h2>Янгиликлар</h2>
+						<h2>Yangiliklar</h2>
 						<ul class="bread-list">
-							<li><a href="{% url "clinic:home" %}">Бош сахифа</a></li>
+							<li><a href="{% url "clinic:home" %}">Bosh sahifa</a></li>
 							<li><i class="icofont-simple-right"></i></li>
-							<li><a href="{% url "clinic:news_detail" news_item.id %}">Янгиликлар</a></li>
+							<li><a href="{% url "clinic:news_detail" news_item.id %}">Yangiliklar</a></li>
 						</ul>
 					</div>
 				</div>
@@ -41,7 +41,7 @@
 										<span class="date"><i class="fa fa-calendar"></i>{{ news_item.created }}</span>
 									</div>
 									<div class="meta-right">
-										<span class="views"><i class="fa fa-eye"></i>{{ news_item.viewers }} Кўришлар</span>
+										<span class="views"><i class="fa fa-eye"></i>Ko'rishlar soni {{ news_item.viewers }}</span>
 									</div>
 								</div>
 								<!-- News Text -->
@@ -63,7 +63,7 @@
 				<div class="col-lg-4 col-12">
 					<div class="main-sidebar">
 						<div class="single-widget recent-post">
-							<h3 class="title">Яқинда эълон қилинган хабар</h3>
+							<h3 class="title">So'ngi yangiliklar</h3>
 							<!-- Single Post -->
 							 {% for item in latest_news %}
 								<div class="single-post">
