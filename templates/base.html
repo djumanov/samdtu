@@ -14,7 +14,7 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
 	<!-- Title -->
-	<title>Sam klinika</title>
+	<title>SAMDTU Ko'p Tarmoqli Klinikasi</title>
 
 	<!-- Favicon -->
 	<link rel="icon" href="{% static "img/favicon.png" %}">
@@ -148,17 +148,17 @@
 							<div class="main-menu">
 								<nav class="navigation">
 									<ul class="nav menu">
-										<li class="active"><a href="{% url "clinic:home" %}">Бош сахифа</a></li>
-										<li><a href="{% url "clinic:news" %}">Янгиликлар </a>
+										<li class="active"><a href="{% url "clinic:home" %}">Bosh sahifa</a></li>
+										<li><a href="{% url "clinic:news" %}">Yangiliklar </a>
 										</li>
-										<li><a href="#">Клиника </a><i class="icofont-rounded-down"></i></a>
+										<li><a href="#">Klinika </a><i class="icofont-rounded-down"></i></a>
 											<ul class="dropdown">
 												{% for info in info_items %}
 													<li><a href="{% url "clinic:info" info.id %}">{{ info.title }}</a></li>
 												{% endfor %}
 											</ul>
 										</li>
-										<li><a href="#">Булимлар </a><i class="icofont-rounded-down"></i></a>
+										<li><a href="#">Bo'limlar </a><i class="icofont-rounded-down"></i></a>
 											<ul class="dropdown">
 												{% for department in departments %}
 												<li><a href="{% url "clinic:department" department.id %}">{{ department.title }}</a></li>
@@ -166,14 +166,14 @@
 											</ul>
 										</li>
 										
-										<li><a href="#">Хужжатлар </a><i class="icofont-rounded-down"></i></a>
+										<li><a href="#">Hujjatlar </a><i class="icofont-rounded-down"></i></a>
 											<ul class="dropdown">
 												{% for doc in doc_categories %}
 													<li><a href="{% url "clinic:doc" doc.id %}">{{ doc.name }}</a></li>
 												{% endfor %}
 											</ul>
 										</li>
-										<li><a href="Tendirlar.html">Тендерлар</a></li>
+										<li><a href="#">Tendirlar</a></li>
 										<!-- <li><a href="contact.html">Contact Us</a></li> -->
 									</ul>
 								</nav>
@@ -276,8 +276,7 @@
 							<div class="single-footer-img">
 								<a href="#"><img src="{% static "img/samdtu-logo.png" %}" /></a>
 							</div>
-							<p>Ўзбекистон Республикаси Соғлиқни сақлаш вазирлиги Самарканд давлат тиббиёт инверситетининг
-								1-клиникаси.</p>
+							<p>Oʼzbekiston Respublikasi Sogʼliqni saqlash vazirligi Samarkand davlat tibbiyot inversitetining-klinikasi.</p>
 							<!-- Social -->
 							<ul class="social">
 								<li><a href="https://t.me/klinika_samdtu"><i class="fa fa-telegram" aria-hidden="true"></i></a></li>
@@ -290,14 +289,14 @@
 					</div>
 					<div class="col-lg-4 col-md-6 col-12 wow animate__fadeInUp">
 						<div class="single-footer f-link">
-							<h2>Манзилимиз</h2>
+							<h2>Manzilimiz</h2>
 							<div class="row">
 								<div class="col-lg-12 col-md-12 col-12">
 									<ul>
-										<li><i class="fa fa-globe" aria-hidden="true"></i>Самарқанд давлат тиббиёт университети</li>
-										<li><i class="fa fa-map-marker" aria-hidden="true"></i> Бизнинг манзил 703000. Узбекистан Республика, Самарканд шахри, Анкабой кучаси </li>
-										<li><i class="fa fa-phone" aria-hidden="true"></i> Бизнинг телефонлар <br /> +99866 238-67-26</li>
-										<li><i class="fa fa-envelope" aria-hidden="true"></i> klinikasammi@mail.ru</li>
+										<li><i class="fa fa-globe" aria-hidden="true"></i>Samarqand davlat tibbiyot universiteti</li>
+										<li><i class="fa fa-map-marker" aria-hidden="true"></i>Bizning manzil 703000. Uzbekistan Respublika, Samarkand shaxri, Аnkaboy kuchasi</li>
+										<li><i class="fa fa-phone" aria-hidden="true"></i>Bizning telefonlar<br /> +99866 238-67-26</li>
+										<li><i class="fa fa-envelope" aria-hidden="true"></i>klinikasammi@mail.ru</li>
 									</ul>
 								</div>
 							</div>
@@ -306,7 +305,7 @@
 					
 					<div class="col-lg-5 col-md-6 col-12">
 						<div class="single-footer">
-							<h2>Биз жойлашган манзил</h2>
+							<h2>Biz joylashgan manzil</h2>
 							<iframe style="width: 100%; height: 90%;"
 								src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d12284.54030078054!2d66.965559!3d39.669176!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3f4d18e8e16b371b%3A0x5b47421b540b7ac4!2z0JrQu9C40L3QuNC60LAg0KHQsNC80JzQmA!5e0!3m2!1sru!2sus!4v1719237623097!5m2!1sru!2sus"
 								allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
@@ -322,7 +321,7 @@
 				<div class="row">
 					<div class="col-lg-12 col-md-12 col-12">
 						<div class="copyright-content">
-							<p>© Copyright 2024 | All Rights Reserved by </p>
+							<p>© Copyright 2024 </p>
 						</div>
 					</div>
 				</div>

@@ -11,8 +11,8 @@
 					<div class="row">
 						<div class="col-lg-7">
 							<div class="text">
-								<h1><span>СAМДТУ КЎП ТAРМОҚЛИ КЛИНИКAСИ!</span></h1>
-								<p style="color: #1a76d1; font-size: 24px">Биз сизга ишончли тиббий хизматлар кўрсатамиз!</p>
+								<h1><span>SAMDTU KOʼP TARMOQLI KLINIKASI!</span></h1>
+								<p style="color: #1a76d1; font-size: 24px">Biz sizga ishonchli tibbiy xizmatlar koʼrsatamiz!</p>
 							</div>
 						</div>
 					</div>
@@ -25,8 +25,8 @@
 					<div class="row">
 						<div class="col-lg-7">
 							<div class="text">
-								<h1><span>СAМДТУ КЎП ТAРМОҚЛИ КЛИНИКAСИ!</span></h1>
-								<p style="color: #1a76d1; font-size: 24px">Биз сизга ишончли тиббий хизматлар кўрсатамиз!</p>
+								<h1><span>SAMDTU KOʼP TARMOQLI KLINIKASI!</span></h1>
+								<p style="color: #1a76d1; font-size: 24px">Biz sizga ishonchli tibbiy xizmatlar koʼrsatamiz!</p>
 							</div>
 						</div>
 					</div>
@@ -39,8 +39,8 @@
 					<div class="row">
 						<div class="col-lg-7">
 							<div class="text">
-								<h1><span>СAМДТУ КЎП ТAРМОҚЛИ КЛИНИКAСИ!</span></h1>
-								<p style="color: #1a76d1; font-size: 24px">Биз сизга ишончли тиббий хизматлар кўрсатамиз!</p>
+								<h1><span>SAMDTU KOʼP TARMOQLI KLINIKASI!</span></h1>
+								<p style="color: #1a76d1; font-size: 24px">Biz sizga ishonchli tibbiy xizmatlar koʼrsatamiz!</p>
 							</div>
 						</div>
 					</div>
@@ -79,7 +79,7 @@
 												{{ latest_news.0.created }}</span>
 										</div>
 										<div class="carousel-icons-right">
-											<span class="views"><i class="fa fa-eye"></i>{{ latest_news.0.viewers }} Views</span>
+											<span class="views"><i class="fa fa-eye"></i>Ko'rishlar soni {{ latest_news.0.viewers }}</span>
 										</div>
 									</div>
 									<h4>{{ latest_news.0.description }}</h4>
@@ -96,7 +96,7 @@
 														{{ item.created }}</span>
 												</div>
 												<div class="carousel-icons-right">
-													<span class="views"><i class="fa fa-eye"></i>{{ item.viewers }} Views</span>
+													<span class="views"><i class="fa fa-eye"></i>Ko'rishlar soni {{ item.viewers }}</span>
 												</div>
 											</div>
 											<h4>{{ item.description }}</h4>
@@ -109,12 +109,12 @@
 						<button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleDark"
 							data-bs-slide="prev">
 							<span class="carousel-control-prev-icon" aria-hidden="true"></span>
-							<span class="visually-hidden">Previous</span>
+							<span class="visually-hidden">Oldingi</span>
 						</button>
 						<button class="carousel-control-next" type="button" data-bs-target="#carouselExampleDark"
 							data-bs-slide="next">
 							<span class="carousel-control-next-icon" aria-hidden="true"></span>
-							<span class="visually-hidden">Next</span>
+							<span class="visually-hidden">Keyingi</span>
 						</button>
 					</div>
 				</div>
@@ -123,9 +123,9 @@
 						<div class="col-lg-12 col-md-12 col-12">
 							<!-- Start Single Service -->
 							<div class="single-service-top">
-								<h2>Янгиликлар <img src="{% static "img/section-img.png" %}" alt="#"></h2>
+								<h2>Yangiliklar <img src="{% static "img/section-img.png" %}" alt="#"></h2>
 								<span><a href="{% url "clinic:news" %}"
-										style="text-decoration: none; color: #1A76D1;">Барча янгиликлар</a></span>
+										style="text-decoration: none; color: #1A76D1;">BARCHA YANGILIKLAR</a></span>
 							</div>
 							<!-- End Single Service -->
 						</div>
@@ -143,7 +143,7 @@
 													{{ item.created }}</span>
 											</div>
 											<div class="meta-right">
-												<span class="views"><i class="fa fa-eye"></i>{{ item.viewers }} Кўришлар</span>
+												<span class="views"><i class="fa fa-eye"></i>Ko'rishlar soni {{ item.viewers }}</span>
 											</div>
 										</div>
 									
@@ -172,7 +172,7 @@
 						<i class="fa fa-users"></i>
 						<div class="content">
 							<span class="counter">3468</span>
-							<p>Даволанган беморлар сони</p>
+							<p>Davolangan bemorlar soni</p>
 						</div>
 					</div>
 					<!-- End Single Fun -->
@@ -183,7 +183,7 @@
 						<i class="icofont icofont-user-alt-3"></i>
 						<div class="content">
 							<span class="counter">557</span>
-							<p>Амалга оширилган операциялар сони</p>
+							<p>Аmalga oshirilgan operatsiyalar soni</p>
 						</div>
 					</div>
 					<!-- End Single Fun -->
@@ -194,7 +194,7 @@
 						<i class="icofont-simple-smile"></i>
 						<div class="content">
 							<span class="counter">4379</span>
-							<p>Туғилишлар сони</p>
+							<p>Tugʼilishlar soni</p>
 						</div>
 					</div>
 					<!-- End Single Fun -->
@@ -205,7 +205,7 @@
 						<i class="icofont icofont-table"></i>
 						<div class="content">
 							<span class="counter">32</span>
-							<p>Амбулатория ташрифлари</p>
+							<p>Аmbulatoriya tashriflari</p>
 						</div>
 					</div>
 					<!-- End Single Fun -->
@@ -220,7 +220,7 @@
             <div class="row">
                 <div class="col-lg-12 wow animate__fadeInUp">
                     <div class="section-title">
-                        <h2>Кленика томонидан қилиб бориладиган ишлар</h2>
+                        <h2>Klinika tomonidan qilib boriladigan ishlar</h2>
                         <img src="{% static "img/section-img.png" %}" alt="#">
                     </div>
                 </div>
@@ -228,15 +228,15 @@
             <ul class="nav nav-pills nav-justified" id="pills-tab" role="tablist">
                 <li class="nav-item" role="presentation">
                     <button class="btn btn-outline-primary nav-link " id="pills-home-tab" data-bs-toggle="pill" data-bs-target="#pills-home"
-                        type="button" role="tab" aria-controls="pills-home" aria-selected="true">Фото</button>
+                        type="button" role="tab" aria-controls="pills-home" aria-selected="true">Foto</button>
                 </li>
                 <li class="nav-item" role="presentation">
                     <button class="btn btn-outline-primary  nav-link" id="pills-profile-tab" data-bs-toggle="pill" data-bs-target="#pills-profile"
-                        type="button" role="tab" aria-controls="pills-profile" aria-selected="false">Ведио</button>
+                        type="button" role="tab" aria-controls="pills-profile" aria-selected="false">Video</button>
                 </li>
                 <li class="nav-item" role="presentation">
                     <button class="btn btn-outline-primary nav-link" id="pills-contact-tab" data-bs-toggle="pill" data-bs-target="#pills-contact"
-                        type="button" role="tab" aria-controls="pills-contact" aria-selected="false">Умумий ведио қулланмалар</button>
+                        type="button" role="tab" aria-controls="pills-contact" aria-selected="false">Umumiy video qo'llanma</button>
                 </li>
             </ul>
             <div class="tab-content" id="pills-tabContent">
@@ -254,7 +254,7 @@
                                         <div class="news-body">
                                             <div class="news-content">
                                                 {% comment %} <div class="date"><a href="#">Кўриш</a></div> {% endcomment %}
-                                                <h2><a href="blog-single.html">марказий стерилизация бўлими.</a></h2>
+                                                <h2><a href="blog-single.html">Markaziy sterilizatsiya boʼlimi.</a></h2>
                                             </div>
                                         </div>
                                     </div>
@@ -280,7 +280,7 @@
                                         <div class="news-body">
                                             <div class="news-content">
                                                 {% comment %} <div class="date"><a href="#">Кўриш</a></div> {% endcomment %}
-                                                <h2><a href="fotolavha.html">Болалар касалликлари бўлими.</a></h2>
+                                                <h2><a href="fotolavha.html">Bolalar kasalliklari boʼlimi.</a></h2>
                                             </div>
                                         </div>
                                     </div>
@@ -293,7 +293,7 @@
                                         <div class="news-body">
                                             <div class="news-content">
                                                 {% comment %} <div class="date"><a href="#">Кўриш</a></div> {% endcomment %}
-                                                <h2><a href="blog-single.html">Болалар асаб касалликлари бўлими.</a></h2>
+                                                <h2><a href="blog-single.html">Bolalar asab kasalliklari boʼlimi.</a></h2>
                                             </div>
                                         </div>
                                     </div>
@@ -306,7 +306,7 @@
                                         <div class="news-body">
                                             <div class="news-content">
                                                 {% comment %} <div class="date"><a href="#">Кўриш</a></div> {% endcomment %}
-                                                <h2><a href="blog-single.html">Oперация бўлими.</a></h2>
+                                                <h2><a href="blog-single.html">Операция бўлими.</a></h2>
                                             </div>
                                         </div>
                                     </div>
@@ -319,7 +319,7 @@
                                         <div class="news-body">
                                             <div class="news-content">
                                                 {% comment %} <div class="date"><a href="#">Кўриш</a></div> {% endcomment %}
-                                                <h2><a href="blog-single.html">лаборатория.</a></h2>
+                                                <h2><a href="blog-single.html">Laboratoriya.</a></h2>
                                             </div>
                                         </div>
                                     </div>
@@ -338,27 +338,22 @@
                                 <div class="col-lg-6 col-12">
                                     <!-- Start Choose Left -->
                                     <div class="choose-left">
-                                        <h3>Who We Are</h3>
-                                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas pharetra antege
-                                            vel est
-                                            lobortis, a commodo magna rhoncus. In quis nisi non emet quam pharetra commodo.
-                                        </p>
-                                        <p>Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos
-                                            himenaeos.
-                                        </p>
+                                        <h3>Klinika bilan tanishish</h3>
+                                        <p>Klinika haqida umumiy ma'lumotlar.</p>
+                                        <p>Klinikadagi ishlar haqida ma'lumotlar.</p>
                                         <div class="row">
                                             <div class="col-lg-6">
                                                 <ul class="list">
-                                                    <li><i class="fa fa-caret-right"></i>Maecenas vitae luctus nibh. </li>
-                                                    <li><i class="fa fa-caret-right"></i>Duis massa massa.</li>
-                                                    <li><i class="fa fa-caret-right"></i>Aliquam feugiat interdum.</li>
+                                                    <li><i class="fa fa-caret-right"></i>ma'lumotlar. </li>
+                                                    <li><i class="fa fa-caret-right"></i>ma'lumotlar.</li>
+                                                    <li><i class="fa fa-caret-right"></i>ma'lumotlar.</li>
                                                 </ul>
                                             </div>
                                             <div class="col-lg-6">
                                                 <ul class="list">
-                                                    <li><i class="fa fa-caret-right"></i>Maecenas vitae luctus nibh. </li>
-                                                    <li><i class="fa fa-caret-right"></i>Duis massa massa.</li>
-                                                    <li><i class="fa fa-caret-right"></i>Aliquam feugiat interdum.</li>
+                                                    <li><i class="fa fa-caret-right"></i>ma'lumotlar.</li>
+                                                    <li><i class="fa fa-caret-right"></i>ma'lumotlar.</li>
+                                                    <li><i class="fa fa-caret-right"></i>ma'lumotlar.</li>
                                                 </ul>
                                             </div>
                                         </div>
@@ -417,11 +412,9 @@
                                         </div>
                                         <div class="news-body">
                                             <div class="news-content">
-                                                <div class="date">22 Aug, 2020</div>
-                                                <h2><a href="blog-single.html">We have annnocuced our new product.</a></h2>
-                                                <p class="text">Lorem ipsum dolor a sit ameti, consectetur adipisicing elit,
-                                                    sed do
-                                                    eiusmod tempor incididunt sed do incididunt sed.</p>
+                                                <div class="date">Video ro'lik</div>
+                                                <h2><a href="blog-single.html">Olib borilayotgan ishlar bilan tanishish.</a></h2>
+                                                <p class="text">Olib borilayotgan ishlar bilan tanishish va hodimlarimizni salohiyatlari haqida.</p>
                                             </div>
                                         </div>
                                     </div>
@@ -449,11 +442,9 @@
                                         </div>
                                         <div class="news-body">
                                             <div class="news-content">
-                                                <div class="date">22 Aug, 2020</div>
-                                                <h2><a href="blog-single.html">We have annnocuced our new product.</a></h2>
-                                                <p class="text">Lorem ipsum dolor a sit ameti, consectetur adipisicing elit,
-                                                    sed do
-                                                    eiusmod tempor incididunt sed do incididunt sed.</p>
+                                                <div class="date">Video ro'lik</div>
+                                                <h2><a href="blog-single.html">Klinika sharoitlari</a></h2>
+                                                <p class="text">Klinika sharoitlari bilan tanishish va bemorlarga yaratilgan sharoitlari haqida.</p>
                                             </div>
                                         </div>
                                     </div>
