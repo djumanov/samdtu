@@ -1,15 +1,14 @@
 from django.db import models
-from ckeditor_uploader.fields import RichTextUploadingField
+# from ckeditor_uploader.fields import RichTextUploadingField
+from .validators import validate_image_size
+from django.conf import settings
+from urllib.parse import urljoin
 
 
 class Department(models.Model):
-    picture = models.ImageField(
-        upload_to='icons/', 
-        default='icons/default_icon.png',
-        blank=True, null=True
-    )
+    picture = models.CharField(max_length=255, blank=True, null=True)
     title = models.CharField(max_length=255)
-    content = RichTextUploadingField()
+    content = models.TextField()
 
     def __str__(self):
         return self.title[:50]
@@ -26,12 +25,9 @@ class News(models.Model):
     keywords = models.CharField(max_length=256)
     description = models.CharField(max_length=150)
     title = models.CharField(max_length=256)
-    content = RichTextUploadingField()
-    image = models.ImageField(
-        upload_to='news/', 
-        default='news/default_icon.png',
-        blank=True, null=True
-    )
+    content = models.TextField()
+    image = models.CharField(max_length=255, blank=True, null=True)
+    images = models.TextField(blank=True, null=True)
     created = models.DateTimeField()
     category = models.ForeignKey(NewsCategory, on_delete=models.CASCADE)
     alias = models.CharField(max_length=256, unique=True)
@@ -46,7 +42,7 @@ class Info(models.Model):
     keywords = models.CharField(max_length=256)
     description = models.CharField(max_length=150)
     title = models.CharField(max_length=256)
-    content = RichTextUploadingField()
+    content = models.TextField()
     alias = models.CharField(max_length=256, unique=True)
 
     def __str__(self):
@@ -63,10 +59,17 @@ class DocCategory(models.Model):
 class Doc(models.Model):
     title = models.CharField(max_length=256)
     doc = models.FileField(upload_to='docs/', blank=True, null=True)
-    content = RichTextUploadingField()
+    content = models.TextField()
     category = models.ForeignKey(DocCategory, on_delete=models.CASCADE)
     created = models.DateTimeField()
 
     def __str__(self):
         return self.title[:50]
+    
+
+class Image(models.Model):
+    image = models.ImageField(upload_to='images/', validators=[validate_image_size])
+
+    def __str__(self):
+        return self.image.url
     

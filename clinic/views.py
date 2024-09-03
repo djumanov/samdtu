@@ -34,8 +34,13 @@ def news_view(request):
 
 def news_detail_view(request, pk):
     news_item = get_object_or_404(News, id=pk)
+    ctx = {}
+    if news_item.images:
+        images = news_item.images.split()
+        ctx['images'] = images
     latest_news = News.objects.order_by('-created').all()[:5]
-    return render(request, 'news/news_detail.html', {'news_item': news_item, 'latest_news': latest_news})
+    ctx.update({'news_item': news_item, 'latest_news': latest_news})
+    return render(request, 'news/news_detail.html', ctx)
 
 def department_detail_view(request, pk):
     department = get_object_or_404(Department, id=pk)

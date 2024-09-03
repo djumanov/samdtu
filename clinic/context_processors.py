@@ -5,4 +5,5 @@ def global_context(request):
         'departments': Department.objects.all(),
         'info_items': Info.objects.all(),
         'doc_categories': DocCategory.objects.all(),
+        'host': request.build_absolute_uri('/')
     }
