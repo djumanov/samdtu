@@ -14,7 +14,7 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
 	<!-- Title -->
-	<title>SAMDTU Ko'p Tarmoqli Klinikasi</title>
+	<title>{% blocktrans %}SAMDTU Ko'p Tarmoqli Klinikasi{% endblocktrans %}</title>
 
 	<!-- Favicon -->
 	<link rel="icon" href="{% static "img/favicon.png" %}">
@@ -88,11 +88,11 @@
 						<ul class="top-contact">
 							<li><i class="fa fa-phone"></i>+99866 238-67-26</li>
 							<li><i class="fa fa-instagram"></i><a
-									href="https://www.instagram.com/klinika_sammu?utm_source=qr">Instagram</a></li>
+									href="https://www.instagram.com/klinika_sammu?utm_source=qr">{% blocktrans %}Instagram{% endblocktrans %}</a></li>
 							<li><i class="fa fa-telegram"></i><a
-									href="https://t.me/klinika_samdtu">Telegram</a></li>
+									href="https://t.me/klinika_samdtu">{% blocktrans %}Telegram{% endblocktrans %}</a></li>
 							<li><i class="fa fa-facebook"></i><a
-									href="https://www.facebook.com/groups/2199485880432921/">Facebook</a></li>
+									href="https://www.facebook.com/groups/2199485880432921/">{% blocktrans %}Facebook{% endblocktrans %}</a></li>
 						</ul>
 						
 						<!-- End Top Contact -->
@@ -148,17 +148,17 @@
 							<div class="main-menu">
 								<nav class="navigation">
 									<ul class="nav menu">
-										<li class="active"><a href="{% url "clinic:home" %}">Bosh sahifa</a></li>
-										<li><a href="{% url "clinic:news" %}">Yangiliklar </a>
+										<li class="active"><a href="{% url "clinic:home" %}">{% blocktrans %}Bosh sahifa{% endblocktrans %}</a></li>
+										<li><a href="{% url "clinic:news" %}">{% blocktrans %}Yangiliklar{% endblocktrans %}</a>
 										</li>
-										<li><a href="#">Klinika </a><i class="icofont-rounded-down"></i></a>
+										<li><a href="#">{% blocktrans %}Klinika{% endblocktrans %}</a><i class="icofont-rounded-down"></i></a>
 											<ul class="dropdown">
 												{% for info in info_items %}
 													<li><a href="{% url "clinic:info" info.id %}">{{ info.title }}</a></li>
 												{% endfor %}
 											</ul>
 										</li>
-										<li><a href="#">Bo'limlar </a><i class="icofont-rounded-down"></i></a>
+										<li><a href="#">{% blocktrans %}Bo'limlar{% endblocktrans %}</a><i class="icofont-rounded-down"></i></a>
 											<ul class="dropdown">
 												{% for department in departments %}
 												<li><a href="{% url "clinic:department" department.id %}">{{ department.title }}</a></li>
@@ -166,14 +166,14 @@
 											</ul>
 										</li>
 										
-										<li><a href="#">Hujjatlar </a><i class="icofont-rounded-down"></i></a>
+										<li><a href="#">{% blocktrans %}Hujjatlar{% endblocktrans %}</a><i class="icofont-rounded-down"></i></a>
 											<ul class="dropdown">
 												{% for doc in doc_categories %}
 													<li><a href="{% url "clinic:doc" doc.id %}">{{ doc.name }}</a></li>
 												{% endfor %}
 											</ul>
 										</li>
-										<li><a href="#">Tendirlar</a></li>
+										<li><a href="#">{% blocktrans %}Tendirlar{% endblocktrans %}</a></li>
 										<!-- <li><a href="contact.html">Contact Us</a></li> -->
 									</ul>
 								</nav>
@@ -276,7 +276,7 @@
 							<div class="single-footer-img">
 								<a href="#"><img src="{% static "img/samdtu-logo.png" %}" /></a>
 							</div>
-							<p>Oʼzbekiston Respublikasi Sogʼliqni saqlash vazirligi Samarkand davlat tibbiyot inversitetining-klinikasi.</p>
+							<p>{% blocktrans %}Oʼzbekiston Respublikasi Sogʼliqni saqlash vazirligi Samarkand davlat tibbiyot unversitetining-klinikasi.{% endblocktrans %}</p>
 							<!-- Social -->
 							<ul class="social">
 								<li><a href="https://t.me/klinika_samdtu"><i class="fa fa-telegram" aria-hidden="true"></i></a></li>
@@ -289,13 +289,13 @@
 					</div>
 					<div class="col-lg-4 col-md-6 col-12 wow animate__fadeInUp">
 						<div class="single-footer f-link">
-							<h2>Manzilimiz</h2>
+							<h2>{% blocktrans %}Manzilimiz{% endblocktrans %}</h2>
 							<div class="row">
 								<div class="col-lg-12 col-md-12 col-12">
 									<ul>
-										<li><i class="fa fa-globe" aria-hidden="true"></i>Samarqand davlat tibbiyot universiteti</li>
-										<li><i class="fa fa-map-marker" aria-hidden="true"></i>Bizning manzil 703000. Uzbekistan Respublika, Samarkand shaxri, Аnkaboy kuchasi</li>
-										<li><i class="fa fa-phone" aria-hidden="true"></i>Bizning telefonlar<br /> +99866 238-67-26</li>
+										<li><i class="fa fa-globe" aria-hidden="true"></i>{% blocktrans %}Samarqand davlat tibbiyot universiteti{% endblocktrans %}</li>
+										<li><i class="fa fa-map-marker" aria-hidden="true"></i>{% blocktrans %}Bizning manzil 703000. Uzbekistan Respublika, Samarkand shaxri, Аnkaboy kuchasi{% endblocktrans %}</li>
+										<li><i class="fa fa-phone" aria-hidden="true"></i>{% blocktrans %}Bizning telefonlar{% endblocktrans %}<br /> +99866 238-67-26</li>
 										<li><i class="fa fa-envelope" aria-hidden="true"></i>klinikasammi@mail.ru</li>
 									</ul>
 								</div>
@@ -305,7 +305,7 @@
 					
 					<div class="col-lg-5 col-md-6 col-12">
 						<div class="single-footer">
-							<h2>Biz joylashgan manzil</h2>
+							<h2>{% blocktrans %}Biz joylashgan manzil{% endblocktrans %}</h2>
 							<iframe style="width: 100%; height: 90%;"
 								src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d12284.54030078054!2d66.965559!3d39.669176!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3f4d18e8e16b371b%3A0x5b47421b540b7ac4!2z0JrQu9C40L3QuNC60LAg0KHQsNC80JzQmA!5e0!3m2!1sru!2sus!4v1719237623097!5m2!1sru!2sus"
 								allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>

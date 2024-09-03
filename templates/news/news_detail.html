@@ -1,5 +1,6 @@
 {% extends "base.html" %}
 {% load static %}
+{% load i18n %}
 
 {% block content %}
 	<!-- Breadcrumbs -->
@@ -8,11 +9,11 @@
 			<div class="bread-inner">
 				<div class="row">
 					<div class="col-12">
-						<h2>Yangiliklar</h2>
+						<h2>{% blocktrans %}Yangiliklar{% endblocktrans %}</h2>
 						<ul class="bread-list">
-							<li><a href="{% url "clinic:home" %}">Bosh sahifa</a></li>
+							<li><a href="{% url "clinic:home" %}">{% blocktrans %}Bosh sahifa{% endblocktrans %}</a></li>
 							<li><i class="icofont-simple-right"></i></li>
-							<li><a href="{% url "clinic:news_detail" news_item.id %}">Yangiliklar</a></li>
+							<li><a href="{% url "clinic:news_detail" news_item.id %}">{% blocktrans %}Yangiliklar{% endblocktrans %}</a></li>
 						</ul>
 					</div>
 				</div>
@@ -52,11 +53,11 @@
 										<!-- Left and right controls -->
 										<a class="carousel-control-prev" href="#newsCarousel" role="button" data-slide="prev">
 											<span class="carousel-control-prev-icon" aria-hidden="true"></span>
-											<span class="sr-only">Previous</span>
+											<span class="sr-only">{% blocktrans %}Oldingi{% endblocktrans %}</span>
 										</a>
 										<a class="carousel-control-next" href="#newsCarousel" role="button" data-slide="next">
 											<span class="carousel-control-next-icon" aria-hidden="true"></span>
-											<span class="sr-only">Next</span>
+											<span class="sr-only">{% blocktrans %}Keyingi{% endblocktrans %}</span>
 										</a>
 									</div>
 								{% else %}
@@ -73,7 +74,7 @@
 										<span class="date"><i class="fa fa-calendar"></i>{{ news_item.created }}</span>
 									</div>
 									<div class="meta-right">
-										<span class="views"><i class="fa fa-eye"></i>Ko'rishlar soni {{ news_item.viewers }}</span>
+										<span class="views"><i class="fa fa-eye"></i>{% blocktrans %}Ko'rishlar soni{% endblocktrans %} {{ news_item.viewers }}</span>
 									</div>
 								</div>
 								<!-- News Text -->
@@ -95,7 +96,7 @@
 				<div class="col-lg-4 col-12">
 					<div class="main-sidebar">
 						<div class="single-widget recent-post">
-							<h3 class="title">So'ngi yangiliklar</h3>
+							<h3 class="title">{% blocktrans %}So'ngi yangilikla{% endblocktrans %}</h3>
 							<!-- Single Post -->
 							 {% for item in latest_news %}
 								<div class="single-post">

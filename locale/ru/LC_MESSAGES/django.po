@@ -1,0 +1,207 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2024-09-03 13:13+0000\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=4; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && "
+"n%10<=4 && (n%100<12 || n%100>14) ? 1 : n%10==0 || (n%10>=5 && n%10<=9) || "
+"(n%100>=11 && n%100<=14)? 2 : 3);\n"
+
+#: core/settings.py:120
+msgid "Uzbek"
+msgstr ""
+
+#: core/settings.py:121
+msgid "Russian"
+msgstr ""
+
+#: core/settings.py:122
+msgid "English"
+msgstr ""
+
+#: templates/base.html:17
+msgid "SAMDTU Ko'p Tarmoqli Klinikasi"
+msgstr "Многопрофильная клиника СГМУ"
+
+#: templates/base.html:91
+msgid "Instagram"
+msgstr "Инстаграм"
+
+#: templates/base.html:93
+msgid "Telegram"
+msgstr "Телеграм"
+
+#: templates/base.html:95
+msgid "Facebook"
+msgstr "Фейсбук"
+
+#: templates/base.html:152 templates/news/news.html:13
+#: templates/news/news_detail.html:13
+msgid "Bosh sahifa"
+msgstr "Главная"
+
+#: templates/base.html:153 templates/home/index.html:132
+#: templates/news/news.html:11 templates/news/news.html:15
+#: templates/news/news_detail.html:11 templates/news/news_detail.html:15
+msgid "Yangiliklar"
+msgstr "Новости"
+
+#: templates/base.html:155
+msgid "Klinika"
+msgstr "Клиника"
+
+#: templates/base.html:162
+msgid "Bo'limlar"
+msgstr "Отделения"
+
+#: templates/base.html:170
+msgid "Hujjatlar"
+msgstr "Документы"
+
+#: templates/base.html:177
+msgid "Tendirlar"
+msgstr "Тендеры"
+
+#: templates/base.html:280
+msgid ""
+"Oʼzbekiston Respublikasi Sogʼliqni saqlash vazirligi Samarkand davlat "
+"tibbiyot unversitetining-klinikasi."
+msgstr ""
+"Клиника Самаркандского государственного медицинского университета "
+"Министерства здравоохранения Республики Узбекистан."
+
+#: templates/base.html:293
+msgid "Manzilimiz"
+msgstr "Наш адрес"
+
+#: templates/base.html:297
+msgid "Samarqand davlat tibbiyot universiteti"
+msgstr "Самаркандский государственный медицинский университет"
+
+#: templates/base.html:298
+msgid ""
+"Bizning manzil 703000. Uzbekistan Respublika, Samarkand shaxri, Аnkaboy "
+"kuchasi"
+msgstr ""
+"Наш адрес 703000. Республика Узбекистан, город Самарканд, улица Анкабой"
+
+#: templates/base.html:299
+msgid "Bizning telefonlar"
+msgstr "Наши телефоны"
+
+#: templates/base.html:309
+msgid "Biz joylashgan manzil"
+msgstr "Местоположение"
+
+#: templates/home/index.html:15 templates/home/index.html:29
+#: templates/home/index.html:43
+msgid "SAMDTU KOʼP TARMOQLI KLINIKASI!"
+msgstr "МНОГОПРОФИЛЬНАЯ КЛИНИКА СГМУ!"
+
+#: templates/home/index.html:16 templates/home/index.html:30
+#: templates/home/index.html:44
+msgid "Biz sizga ishonchli tibbiy xizmatlar koʼrsatamiz!"
+msgstr "Мы предоставляем вам надежные медицинские услуги!"
+
+#: templates/home/index.html:86 templates/home/index.html:105
+#: templates/home/index.html:153 templates/news/news.html:46
+#: templates/news/news_detail.html:76
+msgid "Ko'rishlar soni"
+msgstr "Количество просмотров"
+
+#: templates/home/index.html:118 templates/news/news_detail.html:55
+msgid "Oldingi"
+msgstr "Предыдущая"
+
+#: templates/home/index.html:123 templates/news/news_detail.html:59
+msgid "Keyingi"
+msgstr "Следующая"
+
+#: templates/home/index.html:134
+msgid "Barcha yangiliklar Ko'rish Uchun"
+msgstr "Посмотреть все новости"
+
+#: templates/home/index.html:182
+msgid "Davolangan bemorlar soni"
+msgstr "Количество вылеченных пациентов"
+
+#: templates/home/index.html:193
+msgid "Аmalga oshirilgan operatsiyalar soni"
+msgstr "Количество выполненных операций"
+
+#: templates/home/index.html:204
+msgid "Tugʼilishlar soni"
+msgstr "Количество родов"
+
+#: templates/home/index.html:215
+msgid "Аmbulatoriya tashriflari"
+msgstr "Амбулаторные посещения"
+
+#: templates/home/index.html:230
+msgid "Klinika tomonidan olib boriladigan ishlar"
+msgstr "Деятельность клиники"
+
+#: templates/home/index.html:238
+msgid "Foto"
+msgstr "Фото"
+
+#: templates/home/index.html:242
+msgid "Video"
+msgstr "Видео"
+
+#: templates/home/index.html:246
+msgid "Umumiy video qo'llanma"
+msgstr "Общее видео руководство"
+
+#: templates/home/index.html:265
+msgid "Markaziy sterilizatsiya boʼlimi."
+msgstr "Отделение центральной стерилизации."
+
+#: templates/home/index.html:279
+msgid "Klinika hududining ko'rinishi."
+msgstr "Вид территории клиники."
+
+#: templates/home/index.html:293
+msgid "Bolalar kasalliklari boʼlimi."
+msgstr "Отделение детских болезней."
+
+#: templates/home/index.html:307
+msgid "Bolalar asab kasalliklari boʼlimi."
+msgstr "Отделение детских нервных болезней."
+
+#: templates/home/index.html:321
+msgid "Operatsiya boʼlimi."
+msgstr "Операционное отделение."
+
+#: templates/home/index.html:335
+msgid "Laboratoriya."
+msgstr "Лаборатория."
+
+#: templates/news/news.html:28
+msgid "So'ngi yangiliklar"
+msgstr "Новости"
+
+#: templates/news/news.html:59
+msgid "Yangiliklar mavjud emas"
+msgstr "Ne Новости"
+
+#: templates/news/news.html:95
+msgid "Mavzular"
+msgstr "Темы"
+
+#: templates/news/news_detail.html:98
+msgid "So'ngi yangilikla"
+msgstr "Новости"

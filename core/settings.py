@@ -41,9 +41,6 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
 
-    # third party packages
-    'ckeditor',
-
     # local packages
     'clinic',
 ]
@@ -114,11 +111,9 @@ AUTH_PASSWORD_VALIDATORS = [
 # Internationalization
 # https://docs.djangoproject.com/en/5.0/topics/i18n/
 
-LANGUAGE_CODE = 'en-us'
+LANGUAGE_CODE = 'uz'
 
 TIME_ZONE = 'UTC'
-
-USE_I18N = True
 
 # Supported languages
 LANGUAGES = (
@@ -127,12 +122,17 @@ LANGUAGES = (
     ('en', _('English')),
 )
 
-MODELTRANSLATION_DEFAULT_LANGUAGE = 'ru'
-DEFAULT_LANGUAGE = 'ru'
+LOCALE_PATHS = [
+    BASE_DIR / 'locale',
+]
 
+USE_I18N = True
+USE_L10N = True
+
+MODELTRANSLATION_DEFAULT_LANGUAGE = 'uz'
+DEFAULT_LANGUAGE = 'uz'
 
 USE_TZ = True
-
 
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/5.0/howto/static-files/
@@ -151,13 +151,3 @@ MEDIA_ROOT = BASE_DIR / 'media/'
 # https://docs.djangoproject.com/en/5.0/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
-
-CKEDITOR_UPLOAD_PATH = "uploads/"
-
-CKEDITOR_CONFIGS = {
-    'default': {
-        'toolbar': 'Full',
-        'height': 300,
-        'width': '100%',
-    },
-}

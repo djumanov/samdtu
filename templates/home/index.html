@@ -1,5 +1,6 @@
 {% extends "base.html" %}
 {% load static %}
+{% load i18n %}
 
 {% block content %}
 	<!-- Slider Area -->
@@ -11,8 +12,8 @@
 					<div class="row">
 						<div class="col-lg-7">
 							<div class="text">
-								<h1><span>SAMDTU KOʼP TARMOQLI KLINIKASI!</span></h1>
-								<p style="color: #1a76d1; font-size: 24px">Biz sizga ishonchli tibbiy xizmatlar koʼrsatamiz!</p>
+								<h1><span>{% blocktrans %}SAMDTU KOʼP TARMOQLI KLINIKASI!{% endblocktrans %} </span></h1>
+								<p style="color: #1a76d1; font-size: 24px">{% blocktrans %}Biz sizga ishonchli tibbiy xizmatlar koʼrsatamiz!{% endblocktrans %}</p>
 							</div>
 						</div>
 					</div>
@@ -25,8 +26,8 @@
 					<div class="row">
 						<div class="col-lg-7">
 							<div class="text">
-								<h1><span>SAMDTU KOʼP TARMOQLI KLINIKASI!</span></h1>
-								<p style="color: #1a76d1; font-size: 24px">Biz sizga ishonchli tibbiy xizmatlar koʼrsatamiz!</p>
+								<h1><span>{% blocktrans %}SAMDTU KOʼP TARMOQLI KLINIKASI!{% endblocktrans %}</span></h1>
+								<p style="color: #1a76d1; font-size: 24px">{% blocktrans %}Biz sizga ishonchli tibbiy xizmatlar koʼrsatamiz!{% endblocktrans %}</p>
 							</div>
 						</div>
 					</div>
@@ -39,8 +40,8 @@
 					<div class="row">
 						<div class="col-lg-7">
 							<div class="text">
-								<h1><span>SAMDTU KOʼP TARMOQLI KLINIKASI!</span></h1>
-								<p style="color: #1a76d1; font-size: 24px">Biz sizga ishonchli tibbiy xizmatlar koʼrsatamiz!</p>
+								<h1><span>{% blocktrans %}SAMDTU KOʼP TARMOQLI KLINIKASI!{% endblocktrans %}</span></h1>
+								<p style="color: #1a76d1; font-size: 24px">{% blocktrans %}Biz sizga ishonchli tibbiy xizmatlar koʼrsatamiz!{% endblocktrans %}</p>
 							</div>
 						</div>
 					</div>
@@ -81,7 +82,7 @@
 												{{ latest_news.0.created }}</span>
 										</div>
 										<div class="carousel-icons-right">
-											<span class="views"><i class="fa fa-eye"></i>Ko'rishlar soni {{ latest_news.0.viewers }}</span>
+											<span class="views"><i class="fa fa-eye"></i>{% blocktrans %}Ko'rishlar soni{% endblocktrans %} {{ latest_news.0.viewers }}</span>
 										</div>
 									</div>
 									<h4>{{ latest_news.0.description }}</h4>
@@ -100,7 +101,7 @@
 														{{ item.created }}</span>
 												</div>
 												<div class="carousel-icons-right">
-													<span class="views"><i class="fa fa-eye"></i>Ko'rishlar soni {{ item.viewers }}</span>
+													<span class="views"><i class="fa fa-eye"></i>{% blocktrans %}Ko'rishlar soni{% endblocktrans %} {{ item.viewers }}</span>
 												</div>
 											</div>
 											<h4>{{ item.description }}</h4>
@@ -113,12 +114,12 @@
 						<button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleDark"
 							data-bs-slide="prev">
 							<span class="carousel-control-prev-icon" aria-hidden="true"></span>
-							<span class="visually-hidden">Oldingi</span>
+							<span class="visually-hidden">{% blocktrans %}Oldingi{% endblocktrans %}</span>
 						</button>
 						<button class="carousel-control-next" type="button" data-bs-target="#carouselExampleDark"
 							data-bs-slide="next">
 							<span class="carousel-control-next-icon" aria-hidden="true"></span>
-							<span class="visually-hidden">Keyingi</span>
+							<span class="visually-hidden">{% blocktrans %}Keyingi{% endblocktrans %}</span>
 						</button>
 					</div>
 				</div>
@@ -127,9 +128,9 @@
 						<div class="col-lg-12 col-md-12 col-12">
 							<!-- Start Single Service -->
 							<div class="single-service-top">
-								<h2>Yangiliklar <img src="{% static "img/section-img.png" %}" alt="#"></h2>
+								<h2>{% blocktrans %}Yangiliklar{% endblocktrans %} <img src="{% static "img/section-img.png" %}" alt="#"></h2>
                                 <div class="btn">
-								    <a href="{% url "clinic:news" %}">Barcha yangiliklar Ko'rish Uchun</a>
+								    <a href="{% url "clinic:news" %}">{% blocktrans %}Barcha yangiliklar Ko'rish Uchun{% endblocktrans %}</a>
                                 </dev>
 							</div>
 							<!-- End Single Service -->
@@ -148,7 +149,7 @@
 													{{ item.created }}</span>
 											</div>
 											<div class="meta-right">
-												<span class="views"><i class="fa fa-eye"></i>Ko'rishlar soni {{ item.viewers }}</span>
+												<span class="views"><i class="fa fa-eye"></i>{% blocktrans %}Ko'rishlar soni{% endblocktrans %} {{ item.viewers }}</span>
 											</div>
 										</div>
 									
@@ -177,7 +178,7 @@
 						<i class="fa fa-users"></i>
 						<div class="content">
 							<span class="counter">3468</span>
-							<p>Davolangan bemorlar soni</p>
+							<p>{% blocktrans %}Davolangan bemorlar soni{% endblocktrans %}</p>
 						</div>
 					</div>
 					<!-- End Single Fun -->
@@ -188,7 +189,7 @@
 						<i class="icofont icofont-user-alt-3"></i>
 						<div class="content">
 							<span class="counter">557</span>
-							<p>Аmalga oshirilgan operatsiyalar soni</p>
+							<p>{% blocktrans %}Аmalga oshirilgan operatsiyalar soni{% endblocktrans %}</p>
 						</div>
 					</div>
 					<!-- End Single Fun -->
@@ -199,7 +200,7 @@
 						<i class="icofont-simple-smile"></i>
 						<div class="content">
 							<span class="counter">4379</span>
-							<p>Tugʼilishlar soni</p>
+							<p>{% blocktrans %}Tugʼilishlar soni{% endblocktrans %}</p>
 						</div>
 					</div>
 					<!-- End Single Fun -->
@@ -210,7 +211,7 @@
 						<i class="icofont icofont-table"></i>
 						<div class="content">
 							<span class="counter">32</span>
-							<p>Аmbulatoriya tashriflari</p>
+							<p>{% blocktrans %}Аmbulatoriya tashriflari{% endblocktrans %}</p>
 						</div>
 					</div>
 					<!-- End Single Fun -->
@@ -225,7 +226,7 @@
             <div class="row">
                 <div class="col-lg-12 wow animate__fadeInUp">
                     <div class="section-title">
-                        <h2>Klinika tomonidan olib boriladigan ishlar</h2>
+                        <h2>{% blocktrans %}Klinika tomonidan olib boriladigan ishlar{% endblocktrans %}</h2>
                         <img src="{% static "img/section-img.png" %}" alt="#">
                     </div>
                 </div>
@@ -233,15 +234,15 @@
             <ul class="nav nav-pills nav-justified" id="pills-tab" role="tablist">
                 <li class="nav-item" role="presentation">
                     <button class="btn btn-outline-primary nav-link " id="pills-home-tab" data-bs-toggle="pill" data-bs-target="#pills-home"
-                        type="button" role="tab" aria-controls="pills-home" aria-selected="true">Foto</button>
+                        type="button" role="tab" aria-controls="pills-home" aria-selected="true">{% blocktrans %}Foto{% endblocktrans %}</button>
                 </li>
                 <li class="nav-item" role="presentation">
                     <button class="btn btn-outline-primary  nav-link" id="pills-profile-tab" data-bs-toggle="pill" data-bs-target="#pills-profile"
-                        type="button" role="tab" aria-controls="pills-profile" aria-selected="false">Video</button>
+                        type="button" role="tab" aria-controls="pills-profile" aria-selected="false">{% blocktrans %}Video{% endblocktrans %}</button>
                 </li>
                 <li class="nav-item" role="presentation">
                     <button class="btn btn-outline-primary nav-link" id="pills-contact-tab" data-bs-toggle="pill" data-bs-target="#pills-contact"
-                        type="button" role="tab" aria-controls="pills-contact" aria-selected="false">Umumiy video qo'llanma</button>
+                        type="button" role="tab" aria-controls="pills-contact" aria-selected="false">{% blocktrans %}Umumiy video qo'llanma{% endblocktrans %}</button>
                 </li>
             </ul>
             <div class="tab-content" id="pills-tabContent">
@@ -259,7 +260,7 @@
                                         <div class="news-body">
                                             <div class="news-content">
                                                 {% comment %} <div class="date"><a href="#">Кўриш</a></div> {% endcomment %}
-                                                <h2><a href="blog-single.html">Markaziy sterilizatsiya boʼlimi.</a></h2>
+                                                <h2><a href="blog-single.html">{% blocktrans %}Markaziy sterilizatsiya boʼlimi.{% endblocktrans %}</a></h2>
                                             </div>
                                         </div>
                                     </div>
@@ -272,7 +273,7 @@
                                         <div class="news-body">
                                             <div class="news-content">
                                                 {% comment %} <div class="date"><a href="#">Кўриш</a></div> {% endcomment %}
-                                                <h2><a href="fotolavha.html">Klinika hududining ko'rinishi.</a></h2>
+                                                <h2><a href="fotolavha.html">{% blocktrans %}Klinika hududining ko'rinishi.{% endblocktrans %}</a></h2>
                                             </div>
                                         </div>
                                     </div>
@@ -285,7 +286,7 @@
                                         <div class="news-body">
                                             <div class="news-content">
                                                 {% comment %} <div class="date"><a href="#">Кўриш</a></div> {% endcomment %}
-                                                <h2><a href="fotolavha.html">Bolalar kasalliklari boʼlimi.</a></h2>
+                                                <h2><a href="fotolavha.html">{% blocktrans %}Bolalar kasalliklari boʼlimi.{% endblocktrans %}</a></h2>
                                             </div>
                                         </div>
                                     </div>
@@ -298,7 +299,7 @@
                                         <div class="news-body">
                                             <div class="news-content">
                                                 {% comment %} <div class="date"><a href="#">Кўриш</a></div> {% endcomment %}
-                                                <h2><a href="blog-single.html">Bolalar asab kasalliklari boʼlimi.</a></h2>
+                                                <h2><a href="blog-single.html">{% blocktrans %}Bolalar asab kasalliklari boʼlimi.{% endblocktrans %}</a></h2>
                                             </div>
                                         </div>
                                     </div>
@@ -311,7 +312,7 @@
                                         <div class="news-body">
                                             <div class="news-content">
                                                 {% comment %} <div class="date"><a href="#">Кўриш</a></div> {% endcomment %}
-                                                <h2><a href="blog-single.html">Operatsiya boʼlimi.</a></h2>
+                                                <h2><a href="blog-single.html">{% blocktrans %}Operatsiya boʼlimi.{% endblocktrans %}</a></h2>
                                             </div>
                                         </div>
                                     </div>
@@ -324,7 +325,7 @@
                                         <div class="news-body">
                                             <div class="news-content">
                                                 {% comment %} <div class="date"><a href="#">Кўриш</a></div> {% endcomment %}
-                                                <h2><a href="blog-single.html">Laboratoriya.</a></h2>
+                                                <h2><a href="blog-single.html">{% blocktrans %}Laboratoriya.{% endblocktrans %}</a></h2>
                                             </div>
                                         </div>
                                     </div>
