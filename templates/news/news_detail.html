@@ -61,7 +61,7 @@
 									</div>
 								{% else %}
 									<div class="news-head">
-										<img src="{{ host }}media/{{ news_item.image }}" alt="#">
+										<img src="{{ host }}{{ news_item.image }}" alt="#">
 									</div>
 								{% endif %}
 
@@ -100,7 +100,7 @@
 							 {% for item in latest_news %}
 								<div class="single-post">
 									<div class="image">
-										<img src="{{ host }}media/{{ item.image }}" alt="#">
+										<img src="{{ host }}{{ item.image }}" alt="#">
 									</div>
 									<div class="content">
 										<h5><a href="{% url "clinic:news_detail" item.id %}">{{ item.title }}</a></h5>
