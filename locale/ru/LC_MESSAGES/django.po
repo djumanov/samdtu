@@ -34,7 +34,7 @@ msgstr ""
 
 #: templates/base.html:17
 msgid "SAMDTU Ko'p Tarmoqli Klinikasi"
-msgstr "Многопрофильная клиника СГМУ"
+msgstr "Многопрофильная клиника СамГМУ"
 
 #: templates/base.html:91
 msgid "Instagram"
@@ -109,7 +109,7 @@ msgstr "Местоположение"
 #: templates/home/index.html:15 templates/home/index.html:29
 #: templates/home/index.html:43
 msgid "SAMDTU KOʼP TARMOQLI KLINIKASI!"
-msgstr "МНОГОПРОФИЛЬНАЯ КЛИНИКА СГМУ!"
+msgstr "МНОГОПРОФИЛЬНАЯ КЛИНИКА СамГМУ!"
 
 #: templates/home/index.html:16 templates/home/index.html:30
 #: templates/home/index.html:44
