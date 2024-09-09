@@ -22,112 +22,37 @@
 	</div>
 	<!-- End Breadcrumbs -->
 
-	<!-- Single News -->
-	<section class="news-single section">
+	<!-- Start Portfolio Details Area -->
+	<section class="pf-details section">
 		<div class="container">
 			<div class="row">
-				<div class="col-lg-8 col-12">
-					<div class="row">
-						<div class="col-12">
-							<div class="single-main">
-								<!-- News Head -->
-								
-								{% if images %}
-									<div id="newsCarousel" class="carousel slide" data-ride="carousel">
-										<!-- Indicators -->
-										<ol class="carousel-indicators">
-											{% for image in images %}
-												<li data-target="#newsCarousel" data-slide-to="{{ forloop.counter0 }}" class="{% if forloop.first %}active{% endif %}"></li>
-											{% endfor %}
-										</ol>
-									
-										<!-- Wrapper for slides -->
-										<div class="carousel-inner">
-											{% for image in images %}
-												<div class="carousel-item {% if forloop.first %}active{% endif %}">
-													<img src="{{ host }}{{ image }}" alt="News Image">
-												</div>
-											{% endfor %}
-										</div>
-									
-										<!-- Left and right controls -->
-										<a class="carousel-control-prev" href="#newsCarousel" role="button" data-slide="prev">
-											<span class="carousel-control-prev-icon" aria-hidden="true"></span>
-											<span class="sr-only">{% blocktrans %}Oldingi{% endblocktrans %}</span>
-										</a>
-										<a class="carousel-control-next" href="#newsCarousel" role="button" data-slide="next">
-											<span class="carousel-control-next-icon" aria-hidden="true"></span>
-											<span class="sr-only">{% blocktrans %}Keyingi{% endblocktrans %}</span>
-										</a>
-									</div>
-								{% else %}
-									<div class="news-head">
-										<img src="{{ host }}{{ news_item.image }}" alt="#">
-									</div>
-								{% endif %}
-
-								<!-- News Title -->
-								<h1 class="news-title">{{ news_item.title }}</h1>
-								<!-- Meta -->
-								<div class="meta">
-									<div class="meta-left">
-										<span class="date"><i class="fa fa-calendar"></i>{{ news_item.created }}</span>
-									</div>
-									<div class="meta-right">
-										<span class="views"><i class="fa fa-eye"></i>{% blocktrans %}Ko'rishlar soni{% endblocktrans %} {{ news_item.viewers }}</span>
-									</div>
-								</div>
-								<!-- News Text -->
-								<div class="news-text">
-									{{ news_item.content|safe }}
-								</div>
-								<div class="blog-bottom">
-									<!-- Social Share -->
-									<ul class="social-share">
-										<li class="linkedin"><a href="https://t.me/klinika_samdtu"><i class="fa fa-telegram"></i></a></li>
-										<li class="pinterest"><a href="#"><i class="fa fa-instagram"></i></a></li>
-										<li class="linkedin"><a href="#"><i class="fa fa-facebook"></i></a></li>
-									</ul>
-								</div>
+				<div class="col-12">
+					<div class="inner-content">
+						<div class="image-slider">
+							<div class="pf-details-slider">
+								<img src="{{ host }}{{ news_item.image }}" alt="#">
+								{% for image in images %}
+									<img src="{{ host }}{{ image }}" alt="#">
+								{% endfor %}
 							</div>
 						</div>
-					</div>
-				</div>
-				<div class="col-lg-4 col-12">
-					<div class="main-sidebar">
-						<div class="single-widget recent-post">
-							<h3 class="title">{% blocktrans %}So'ngi yangilikla{% endblocktrans %}</h3>
-							<!-- Single Post -->
-							 {% for item in latest_news %}
-								<div class="single-post">
-									<div class="image">
-										<img src="{{ host }}{{ item.image }}" alt="#">
-									</div>
-									<div class="content">
-										<h5><a href="{% url "clinic:news_detail" item.id %}">{{ item.title }}</a></h5>
-										<ul class="comment">
-											<li><i class="fa fa-calendar" aria-hidden="true"></i>{{ item.created }}</li>
-										</ul>
-									</div>
+						<div class="body-text">
+							<h3>{{ news_item.title }}</h3>
+							<div class="meta">
+								<div class="meta-left">
+									<span class="date"><i class="fa fa-calendar"></i>{{ news_item.created }}</span>
 								</div>
-							{% endfor %}
-							<!-- End Single Post -->
+								<div class="meta-right">
+									<span class="views"><i class="fa fa-eye"></i>{% blocktrans %}Ko'rishlar soni{% endblocktrans %} {{ news_item.viewers }}</span>
+								</div>
+							</div>
+							{{ news_item.content|safe }}
 						</div>
-						<!--/ End Single Widget -->
-
-						<!--/ End Single Widget -->
 					</div>
 				</div>
 			</div>
 		</div>
 	</section>
-	<!--/ End Single News -->
+	<!-- End Portfolio Details Area -->
 
-	<style>
-		.carousel-item img {
-			width: 100%;
-			height: 500px; /* Kerakli balandlik */
-			object-fit: cover; /* Rasmlarni bir xil o'lchamda ko'rsatish */
-		}
-	</style>
 {% endblock %}
